@@ -1,0 +1,113 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Scanner;
+
+// @author Rebeca
+public class ASKGAME {
+
+    public static void main(String[] args) {
+
+        System.out.println("Ola jogador ! Bem vindo ao AskGame! Escolha uma das opções abaixo para prosseguir.");
+
+        Scanner leia = new Scanner(System.in);
+
+        int menu = 0;
+        while (menu != 4) {
+            System.out.println();
+            System.out.println("1-Iniciar o jogo / 2-Informações dos desenvolvedores. / 3-Como funciona o jogo / 4-Sair");
+            menu = lerNumero(leia);
+            switch (menu) {
+                case 1:
+
+                    Jogador jogador1 = new Jogador();
+                    Jogador jogador2 = new Jogador();
+
+                    System.out.println("Ola jogador! Antes de prosseguirmos gostariamos de coletar alguns de seus dados.");
+                    System.out.println("Vamos começar pelo jogador 1 ");
+                    dadoJogador(jogador1, leia);
+                    //Jogador2
+                    System.out.println("Agora é a sua vez Player 2");
+                    dadoJogador(jogador2, leia);
+
+                    jogador1.setPersonagem(selecionarPersonagem(leia, "Player 1", null));
+                    jogador2.setPersonagem(selecionarPersonagem(leia, "Player 2", jogador1.getPersonagem()));
+
+                    Jogo perguntas = new Jogo(jogador1, jogador2);
+                    perguntas.jogar(leia);
+
+                    break;
+
+                case 2:
+                    System.out.println("Ola ficamos felizes em querer saber mais sobre os desenvolvedores!");
+                    System.out.println("Somos um grupo de cinco estudantes na area da tecnologia,fazendo nosso primeiro projeto,");
+                    System.out.println("que consiste em criar um jogo de perguntas sobre a matéria que estudamos nesse semestre.");
+                    break;
+
+                case 3:
+                    System.out.println("Ola este é o ASKGAME! Nosso jogo consiste em um quiz entre DOIS persnagens/players sobre: Programação de soluções computacionais.");
+                    System.out.println("Cada player devera preencher seus dados e logo após escolher dentre os 5 tipos de alunos como um de seus personagens.");
+                    System.out.println("Sendo que nao pode repetir os personagens. Ex.: Player 1 escolheu: Nerd. Player 2 nao podera escolher esse personagem.");
+                    System.out.println("Logo em seguida o sistema ira sortear um numero aleatorio para o Player 1 e 2.");
+                    System.out.println("O jogador que tirar o MAIOR numero devera começar a partida!");
+                    System.out.println("Todo jogador começara a partida com a vida em 100, e a cada pergunta errada diminui 5 em sua vida.");
+                    System.out.println("Pula a vez pra o outro Player, quando o Player que começou errar a perguntar, se ele nao errar o jogo continua nele.");
+                    System.out.println("O jogo so termina quando a vida de um dos personagens é zerada.");
+                    break;
+
+                case 4:
+                    System.out.println("Que pena :/ ");
+                    System.out.println("Volte Sempre!!");
+                    break;
+
+                default:
+                    System.out.print("Ops! Tente uma opção que esteja no menu ");
+                    break;
+            }
+        }
+    }
+
+    private static void dadoJogador(Jogador jogador, Scanner leia) {
+        System.out.println("Qual seu nome?");
+        jogador.setNome(leia.nextLine());
+        System.out.println("Qual seu apelido?");
+        jogador.setApelido(leia.nextLine());
+        System.out.println("Qual o seu email?");
+        jogador.setEmail(leia.nextLine());
+        System.out.println("Qual seu telefone?");
+        jogador.setTel(leia.nextLine());
+    }
+
+    private static int lerNumero(Scanner leia) {
+        try {
+            return Integer.parseInt(leia.nextLine());
+        } catch (NumberFormatException e) {
+            return 0;
+        }
+    }
+
+    private static Personagem selecionarPersonagem(Scanner leia, String nomeJogador, Personagem excetoPersonagem) {
+        Personagem personagem = null;
+
+        List personagens = new ArrayList(Arrays.asList(Personagem.values()));
+
+        personagens.remove(excetoPersonagem);
+        while (personagem == null) {
+            System.out.println("Porfavor "
+                    + nomeJogador
+                    + ", escolha o seu personagem.");
+
+            System.out.println(personagens);
+
+            personagem = Personagem.seleciona(lerNumero(leia));
+
+            if (!personagens.contains(personagem)) {
+                System.out.println("Escolha um personagem disponivel");
+                personagem = null;
+            } else {
+                System.out.println("Parabens voce agora é: " + personagem);
+            }
+        }
+        return personagem;
+    }
+}
