@@ -1,0 +1,54 @@
+class Jogador {
+
+    private String nome, tel, apelido, email;
+    private Personagem personagem;
+    private int pontos = 100;
+
+    public void atualizaPontos(int atualizaPontos) {
+        this.pontos += atualizaPontos;
+    }
+
+    public int getPontos() {
+        return pontos;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getTel() {
+        return tel;
+    }
+
+    public void setTel(String tel) {
+        this.tel = tel;
+    }
+
+    public String getApelido() {
+        return apelido;
+    }
+
+    public void setApelido(String apelido) {
+        this.apelido = apelido;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public Personagem getPersonagem() {
+        return personagem;
+    }
+
+    public void setPersonagem(Personagem personagem) {
+        this.personagem = personagem;
+    }
+}
