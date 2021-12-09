@@ -1,0 +1,16 @@
+enum Personagem {
+    Nerd, Gado, Heterotop, Parasita, Valentao;
+
+    public static Personagem seleciona(int numeroPersonagem) {
+        try {
+            return values()[numeroPersonagem - 1];
+        } catch (Exception e) {
+            return null;
+        }
+    }
+
+    @Override
+    public String toString() {
+        return (ordinal () + 1) + " - " + name();
+    }
+}
