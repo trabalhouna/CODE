@@ -38,10 +38,12 @@ public class ASKGAME {
 
                     break;
 
-                case 2:
-                    System.out.println("Ola ficamos felizes em querer saber mais sobre os desenvolvedores!");
-                    System.out.println("Somos um grupo de cinco estudantes na area da tecnologia,fazendo nosso primeiro projeto,");
-                    System.out.println("que consiste em criar um jogo de perguntas sobre a matéria que estudamos nesse semestre.");
+                 case 2:
+                    System.out.println("ARTHUR MACHADO FERREIRA RA:32122301");
+                    System.out.println("BRAYAN HENRIQUE DE SOUZA RODRIGUES RA:321222087");
+                    System.out.println("GABRYEL JUNIO COSTA TEIXEIRA RA:321221301");
+                    System.out.println("JULIA STEFANNY DA SILVA SOARES RA:321219162");
+                    System.out.println("REBECA CANDIDA DOS SANTOS RA:321219480");
                     break;
 
                 case 3:
