@@ -1,0 +1,78 @@
+import java.awt.Toolkit;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Pergunta {
+
+    private String enunciado;
+    private ArrayList<String> alternativas;
+    private String alternativaCerta;
+
+    public Pergunta(String enunciado) {
+        this.alternativas = new ArrayList();
+        this.enunciado = enunciado;
+    }
+
+    public String getEnunciado() {
+        return enunciado;
+    }
+
+    public void setEnunciado(String enunciado) {
+        this.enunciado = enunciado;
+    }
+
+    public ArrayList<String> getAlternativas() {
+        return alternativas;
+    }
+
+    public void adicionaAlternativas(String alternativas, boolean certa) {
+        this.alternativas.add(alternativas);
+        if (certa) {
+            this.alternativaCerta = alternativas;
+        }
+    }
+
+            
+    boolean perguntar(Scanner leia) {
+       
+        System.out.println(enunciado);
+        for (String alternativa : alternativas) {
+            System.out.println(alternativa);
+
+        }
+        String resposta = lerResposta(leia);
+
+        if (resposta.trim().equalsIgnoreCase(alternativaCerta)) {
+            return true;
+        } else {
+            return false;
+        }
+
+    }
+
+    private String lerResposta(Scanner leia) {
+        while (true) {
+            System.out.println("Resposta: ");
+            
+            String resposta = lerTexto(leia);
+
+            System.out.println("Tem certeza dessa resposta? (S/N) " + resposta);
+            String confirma = lerTexto(leia);
+            if ("S".equalsIgnoreCase(confirma)) {
+                return resposta;
+            }
+
+        }
+    }
+
+    private String lerTexto(Scanner leia) {
+        while (true) {
+            String resposta = leia.nextLine();
+            if (resposta == null || resposta.trim().isEmpty()) {
+                continue;
+            }
+            return resposta.trim();
+        }
+    }
+
+}
