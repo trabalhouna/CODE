@@ -15,7 +15,10 @@ public class ASKGAME {
         int menu = 0;
         while (menu != 4) {
             System.out.println();
-            System.out.println("1-Iniciar o jogo / 2-Informações dos desenvolvedores. / 3-Como funciona o jogo / 4-Sair");
+            System.out.println("[1]Iniciar o jogo");
+            System.out.println("[2]Informações dos desenvolvedores");
+            System.out.println("[3]Como funciona o jogo");
+            System.out.println("[4]Sair");
             menu = lerNumero(leia);
             switch (menu) {
                 case 1:
@@ -38,7 +41,7 @@ public class ASKGAME {
 
                     break;
 
-                 case 2:
+                case 2:
                     System.out.println("ARTHUR MACHADO FERREIRA RA:32122301");
                     System.out.println("BRAYAN HENRIQUE DE SOUZA RODRIGUES RA:321222087");
                     System.out.println("GABRYEL JUNIO COSTA TEIXEIRA RA:321221301");
@@ -112,4 +115,5 @@ public class ASKGAME {
         }
         return personagem;
     }
+
 }
