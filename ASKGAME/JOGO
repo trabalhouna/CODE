@@ -1,5 +1,6 @@
 
 
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -15,81 +16,90 @@ public class Jogo {
 
         //pergunta1
         Pergunta pergunta1 = new Pergunta("Superclasse é uma especialização de um conjunto de classes através de herança.");
-        pergunta1.adicionaAlternativas("Verdadeiro", false);
-        pergunta1.adicionaAlternativas("Falso", true);
+        pergunta1.adicionaAlternativas("[1] Verdadeiro", false);
+        pergunta1.adicionaAlternativas("[2] Falso", true);
 
         this.perguntas.add(pergunta1);
 
         //pergunta2
         Pergunta pergunta2 = new Pergunta("A Sobrecarga possibilita que o mesmo nome possa ser utilizado em diferentes métodos em uma mesma classe, desde que, por exemplo, as quantidades de parâmetros sejam diferentes.");
-        pergunta2.adicionaAlternativas("Verdadeiro", true);
-        pergunta2.adicionaAlternativas("Falso", false);
+        pergunta2.adicionaAlternativas("[1] Verdadeiro", true);
+        pergunta2.adicionaAlternativas("[2] Falso", false);
 
         this.perguntas.add(pergunta2);
 
         //pergunta3
         Pergunta pergunta3 = new Pergunta("Considere que um Analista de TI sabe que uma classe Pessoa Física e uma classe Pessoa Jurídica possuem o atributo nome como uma informação em comum e que o CPF é um atributo específico para a Pessoa Física e o CNPJ é um atributo específico para Pessoa Jurídica. Então o Analista criou uma outra classe com o atributo nome e seu objetivo é que haja herança deste e, eventualmente, outros métodos e atributos, para as classes filhas, Pessoa Física e Pessoa Jurídica, que já existiam.");
-        pergunta3.adicionaAlternativas("Classe sobrescrita", false);
-        pergunta3.adicionaAlternativas("Subclasse", false);
-        pergunta3.adicionaAlternativas("Classe construtora", false);
-        pergunta3.adicionaAlternativas("Classe abstrata", true);
+        pergunta3.adicionaAlternativas("[1] Classe sobrescrita", false);
+        pergunta3.adicionaAlternativas("[2] Subclasse", false);
+        pergunta3.adicionaAlternativas("[3] Classe construtora", false);
+        pergunta3.adicionaAlternativas("[4] Classe abstrata", true);
 
         this.perguntas.add(pergunta3);
 
         //pergunta4
         Pergunta pergunta4 = new Pergunta("Os quatro pilares do paradigma de Orientação a Objetos são:");
-        pergunta4.adicionaAlternativas("Classes, Atributos, Métodos e Abstração.", true);
-        pergunta4.adicionaAlternativas("Herança, Polimorfismo, Classes e Objetos.", false);
-        pergunta4.adicionaAlternativas("Abstração,Encapsulamento, Herança e Polimorfismo.", false);
-        pergunta4.adicionaAlternativas("Sequenciamento, Procedimentos, Bibliotecas e Herança.", false);
-
+        pergunta4.adicionaAlternativas("[1] Classes, Atributos, Métodos e Abstração.", true);
+        pergunta4.adicionaAlternativas("[2] Herança, Polimorfismo, Classes e Objetos.", false);
+        pergunta4.adicionaAlternativas("[3] Abstração,Encapsulamento, Herança e Polimorfismo.", false);
+        pergunta4.adicionaAlternativas("[4] Sequenciamento, Procedimentos, Bibliotecas e Herança.", false);
+        this.perguntas.add(pergunta4);
+        
         //pergunta5
         Pergunta pergunta5 = new Pergunta("Considere a seguinte afirmação sobre a Análise de Sistemas orientada a objetos.\n"
                 + "\n"
                 + "\"Superclasse é a generalização de um conjunto de classes a ela relacionadas.\"");
-        pergunta5.adicionaAlternativas("Verdadeiro", false);
-        pergunta5.adicionaAlternativas("Falso", false);
-
+        pergunta5.adicionaAlternativas("[1] Verdadeiro", false);
+        pergunta5.adicionaAlternativas("[2] Falso", false);
+        this.perguntas.add(pergunta5);
+        
         //pergunta6
         Pergunta pergunta6 = new Pergunta("Assinale a alternativa correta de polimorfismo de acordo com a seguinte afirmação:\n"
                 + "¨se restringe ao uso de templates (C++, por exemplo) e generics (C#/Java).¨");
-        pergunta6.adicionaAlternativas("Inclusão", false);
-        pergunta6.adicionaAlternativas("Sobrecarga", false);
-        pergunta6.adicionaAlternativas("Paramétrico", true);
-        pergunta6.adicionaAlternativas("Coerção", false);
+        pergunta6.adicionaAlternativas("[1] Inclusão", false);
+        pergunta6.adicionaAlternativas("[2] Sobrecarga", false);
+        pergunta6.adicionaAlternativas("[3] Paramétrico", true);
+        pergunta6.adicionaAlternativas("[4] Coerção", false);
+        this.perguntas.add(pergunta6);
 
         //pergunta7
         Pergunta pergunta7 = new Pergunta(" Assinale a alternativa correta de acordo com a frase a seguir:\n"
                 + "¨Relacionamento com características todo-parte, onde existe um grau de acoplamento entre o todo e as partes menos intenso, podendo haver certo grau de independência entre eles.¨");
-        pergunta7.adicionaAlternativas("Agregação", true);
-        pergunta7.adicionaAlternativas("Composição", false);
+        pergunta7.adicionaAlternativas("[1] Agregação", true);
+        pergunta7.adicionaAlternativas("[2] Composição", false);
+        this.perguntas.add(pergunta7);
 
         //pergunta8
         Pergunta pergunta8 = new Pergunta(" É  correto afirmar que o conjunto de propriedades de uma classe  classificam – se como: nome, tipo, valor_defaut e visibilidade.");
-        pergunta8.adicionaAlternativas("Verdadeiro", true);
-        pergunta8.adicionaAlternativas("Falso", false);
+        pergunta8.adicionaAlternativas("[1] Verdadeiro", true);
+        pergunta8.adicionaAlternativas("[2] Falso", false);
+        this.perguntas.add(pergunta8);
 
         //pergunta9
         Pergunta pergunta9 = new Pergunta("A Sobrescrita permite que, em uma mesma classe, tenhamos vários métodos com o mesmo nome, mas com a assinatura diferente.");
-        pergunta9.adicionaAlternativas("Verdadeiro", false);
-        pergunta9.adicionaAlternativas("Falso", true);
-
+        pergunta9.adicionaAlternativas("[1] Verdadeiro", false);
+        pergunta9.adicionaAlternativas("[2] Falso", true);
+        this.perguntas.add(pergunta9);
+        
         //pergunta10
-        Pergunta pergunta10 = new Pergunta("¨No paradigma de orientação a objetos, é possível encapsular o estado de um objeto.¨ Essa afirmativa é:");
-        pergunta10.adicionaAlternativas("Verdadeiro", true);
-        pergunta10.adicionaAlternativas("Falso", false);
+        Pergunta pergunta10 = new Pergunta("No paradigma de orientação a objetos, é possível encapsular o estado de um objeto.¨ Essa afirmativa é:");
+        pergunta10.adicionaAlternativas("[1] Verdadeiro", true);
+        pergunta10.adicionaAlternativas("[2] Falso", false);
+        this.perguntas.add(pergunta10);
 
         //pergunta11
         Pergunta pergunta11 = new Pergunta(" Considere a seguinte afirmação sobre a Análise de Sistemas orientada a objetos.\n"
                 + "\n"
                 + "\"Classe é um conceito orientado a objeto que encapsula dados e abstrações procedurais necessárias para descrever o conteúdo e o comportamento de alguma entidade do mundo real. Pode-se dizer que classe é uma descrição generalizada que descreve uma coleção de objetos similares\".");
-        pergunta11.adicionaAlternativas("Verdadeiro", true);
-        pergunta11.adicionaAlternativas("Falso", false);
-
+        pergunta11.adicionaAlternativas("[1] Verdadeiro", true);
+        pergunta11.adicionaAlternativas("[2] Falso", false);
+        this.perguntas.add(pergunta11);
+        
         //pergunta12
         Pergunta pergunta12 = new Pergunta("Subclasse é uma especialização da superclasse. Uma subclasse herda todos os atributos e operações associadas à sua superclasse e não pode incorporar atributos ou operações adicionais específicas.");
-        pergunta12.adicionaAlternativas("Verdadeiro", false);
-        pergunta12.adicionaAlternativas("Falso", true);
+        pergunta12.adicionaAlternativas("[1] Verdadeiro", false);
+        pergunta12.adicionaAlternativas("[2] Falso", true);
+        this.perguntas.add(pergunta12);
 
     }
 
